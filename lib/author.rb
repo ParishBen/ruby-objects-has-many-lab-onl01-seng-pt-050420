@@ -7,7 +7,7 @@ class Author
    
   end
   def posts 
-    @post
+    Posts.all.select {|a_post| a_post.author == self}
   end
   def add_post(this_post)
    this_post = Post.new
