@@ -9,11 +9,11 @@ class Author
   def posts 
     @post
   end
-  def add_post
-   poster = Post.new
-   @post << poster
-   @@all << poster
-   poster.author = self
+  def add_post(this_post)
+   this_post = Post.new
+   @post << this_post
+   @@all << this_post
+   this_post.author = self
   end  
   def add_post_by_title(new_title)
    a_post = Post.new(new_title)
