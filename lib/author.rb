@@ -12,17 +12,17 @@ class Author
   def add_post(post)
     post.author = self
   end
-  def add_post_by_title(new_title)
-   a_post = Post.new(new_title)
-   a_post.author = self
-  @post <<  a_post
-  @@all << a_post
+ def add_post_by_title(title)
+    post = Post.new(title)
+    post.author = self
   end
+
+  def self.post_count
+    Post.all.count
+  end
+
   def self.all
     @@all
   end
-  def self.post_count
-    newarr=Post.all.select {|posts| !posts.author.nil?}
-    newarr.size
-  end
+  
 end
