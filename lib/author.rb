@@ -21,7 +21,9 @@ class Author
   @post <<  a_post
   @@all << a_post
   end
- 
+  def self.all
+    @@all
+  end
   def self.post_count
     newarr=Post.all.select {|posts| !posts.author.nil?}
     newarr.size
