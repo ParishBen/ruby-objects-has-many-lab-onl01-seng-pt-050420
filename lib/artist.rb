@@ -20,4 +20,7 @@ def add_song_by_name(title)
   newest_song.artist = self
   @songs << newest_song
 end
+def Artist.song_count
+  songs_w_artists = Song.all.select {|song| !song.artist.nil?}
+  songs_w_artists.count
 end
