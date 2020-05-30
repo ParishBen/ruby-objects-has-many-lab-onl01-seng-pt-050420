@@ -9,12 +9,9 @@ class Author
   def posts 
     Posts.all.select {|a_post| a_post.author == self}
   end
-  def add_post(this_post)
-   this_post = Post.new
-   @post << this_post
-   @@all << this_post
-   this_post.author = self
-  end  
+  def add_post(post)
+    post.author = self
+  end
   def add_post_by_title(new_title)
    a_post = Post.new(new_title)
    a_post.author = self
