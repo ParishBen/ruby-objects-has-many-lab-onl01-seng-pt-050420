@@ -4,7 +4,6 @@ class Artist
   def initialize(name)
     @name = name
     @songs = []
-    @@all << self
   end
   def add_song
     song_name = Song.new 
@@ -21,7 +20,8 @@ def add_song_by_name(title)
   @songs << newest_song
 end
 def Artist.song_count
-  songs_w_artists = Song.all.select {|song| !song.artist.nil?}
-  songs_w_artists.count
+  #songs_w_artists = Song.all.select {|song| !song.artist.nil?}
+  #songs_w_artists.count
+  
 end
 end
