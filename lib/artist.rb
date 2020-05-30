@@ -13,7 +13,7 @@ class Artist
     @@all << song_name
   end
   def songs
-   @songs
+   Song.all.select {|song| song.artist == self}
  end
 def add_song_by_name(title)
   newest_song = Song.new(title)
